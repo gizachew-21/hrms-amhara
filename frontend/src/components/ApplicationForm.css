@@ -1,0 +1,458 @@
+.application-page {
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    padding-bottom: 50px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 80px auto 20px;
+    padding: 20px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.vacancy-info {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.vacancy-info h2 {
+    margin: 0;
+    color: #1976d2;
+    font-size: 1.4rem;
+}
+
+.vacancy-info p {
+    margin: 5px 0 0;
+    color: #546e7a;
+    font-weight: 600;
+}
+
+.applicant-form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-section {
+    margin-bottom: 40px;
+}
+
+.form-section h3 {
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 1.25rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #546e7a;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.education-row {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn-submit {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: #5568d3;
+}
+
+.btn-submit:disabled {
+    background: #9fa8da;
+    cursor: not-allowed;
+}
+
+.btn-cancel {
+    background: white;
+    color: #7f8c8d;
+    border: 1px solid #bdc3c7;
+    padding: 12px 35px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background: #f8f9fa;
+    color: #2c3e50;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        margin: 70px auto 20px;
+        padding: 15px;
+    }
+
+    .form-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .vacancy-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .applicant-form {
+        padding: 20px;
+    }
+
+    .form-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-submit,
+    .btn-cancel {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    .success-card {
+        padding: 40px 20px;
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        line-height: 60px;
+    }
+
+    .app-number-box {
+        padding: 20px;
+    }
+
+    .number-display {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .number-display code {
+        font-size: 1.4rem;
+    }
+
+    .success-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-track,
+    .btn-home {
+        width: 100%;
+    }
+}
+
+/* Drag and Drop File Upload Styles */
+.file-drop-zone {
+    border: 2px dashed #cbd5e0;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.file-drop-zone:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.file-drop-zone.drag-active {
+    border-color: #667eea;
+    background: #e8eeff;
+    transform: scale(1.02);
+}
+
+.file-drop-zone.has-file {
+    border-color: #4caf50;
+    background: #f1f8f4;
+}
+
+.drop-zone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.cloud-icon {
+    width: 80px;
+    height: 80px;
+    color: #667eea;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.file-drop-zone:hover .cloud-icon {
+    transform: translateY(-5px);
+}
+
+.file-drop-zone.drag-active .cloud-icon {
+    animation: bounce 0.6s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.drop-text {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+}
+
+.drop-or {
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.browse-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.browse-btn:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.file-requirements {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin: 10px 0 0;
+}
+
+.file-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.file-name {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+    word-break: break-word;
+}
+
+.file-size {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.change-file {
+    font-size: 0.85rem;
+    color: #667eea;
+    margin: 5px 0 0;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .file-drop-zone {
+        padding: 30px 15px;
+    }
+
+    .cloud-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .drop-text {
+        font-size: 1rem;
+    }
+}
+
+/* Success Screen Styles */
+.success-card {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #4caf50;
+    color: white;
+    font-size: 3rem;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+}
+
+.success-card h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.app-number-box {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    border: 1px dashed #667eea;
+}
+
+.app-number-box label {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.number-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.number-display code {
+    font-size: 1.8rem;
+    color: #1a237e;
+    font-weight: 700;
+}
+
+.btn-copy {
+    background: #e8eaf6;
+    color: #3f51b5;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.success-info {
+    color: #546e7a;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-track {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-home {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    padding: 13px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}

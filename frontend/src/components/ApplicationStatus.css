@@ -1,0 +1,269 @@
+.status-page {
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    padding-bottom: 50px;
+}
+
+.status-container {
+    max-width: 800px;
+    margin: 80px auto 20px;
+    padding: 20px;
+}
+
+.status-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.status-header h1 {
+    font-size: 2.22rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.status-header p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+.search-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.search-box form {
+    display: flex;
+    gap: 15px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #667eea;
+}
+
+.search-box button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: #5568d3;
+}
+
+.status-error {
+    background: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.result-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.result-header h2 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.status-badge {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.status-submitted {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-shortlisted {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.status-rejected {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.status-hired {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.result-item label {
+    display: block;
+    font-size: 0.85rem;
+    color: #95a5a6;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-item div {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.status-timeline h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e0e0e0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    border: 2px solid white;
+}
+
+.timeline-item.completed .timeline-dot {
+    background: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+.timeline-item.rejected .timeline-dot {
+    background: #f44336;
+}
+
+.timeline-content h4 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+    color: #34495e;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+@media (max-width: 600px) {
+    .status-container {
+        margin: 70px auto 20px;
+        padding: 15px;
+    }
+
+    .status-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .status-header p {
+        font-size: 1rem;
+    }
+
+    .search-box {
+        padding: 20px;
+    }
+
+    .search-box form {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .search-box button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .result-card {
+        padding: 25px;
+    }
+
+    .result-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .result-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline-dot {
+        left: -25px;
+    }
+}

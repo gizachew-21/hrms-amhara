@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600&display=swap');
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.language-switcher:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.language-switcher:active {
+  transform: translateY(0);
+}
+
+.lang-icon {
+  font-size: 1.1rem;
+}
+
+.lang-text {
+  font-family: 'Noto Sans Ethiopic', 'Nyala', 'Abyssinica SIL', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Amharic text styling */
+[lang="am"] .lang-text,
+.lang-text {
+  font-family: 'Noto Sans Ethiopic', 'Nyala', 'Abyssinica SIL', 'Ebrima', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .language-switcher {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .lang-icon {
+    font-size: 1rem;
+  }
+}

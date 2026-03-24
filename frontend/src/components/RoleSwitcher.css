@@ -1,0 +1,71 @@
+.role-switcher {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.role-switcher-label {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.role-options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.role-option {
+    padding: 6px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.role-option:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.role-option.active {
+    background: white;
+    color: #667eea;
+    border-color: white;
+    cursor: default;
+}
+
+.role-option:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .role-switcher {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .role-options {
+        width: 100%;
+    }
+
+    .role-option {
+        flex: 1;
+        text-align: center;
+    }
+}

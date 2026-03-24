@@ -1,0 +1,566 @@
+.date-picker-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  z-index: 1;
+}
+
+.date-picker-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 3px solid transparent;
+  border-radius: 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  color: #1f2937;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.date-picker-input:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
+  background: linear-gradient(#fafbff, #fafbff) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+}
+
+.date-picker-input:focus {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.35), 0 0 0 4px rgba(129, 140, 248, 0.2);
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+}
+
+/* Style for HTML date input */
+.date-picker-input[type="date"] {
+  position: relative;
+  padding-right: 45px;
+  background: white;
+  color: #333;
+}
+
+/* Hide default calendar icon for date input */
+.date-picker-input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Firefox date input */
+.date-picker-input[type="date"]::-moz-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.date-picker-icon {
+  display: none;
+}
+
+.date-picker-dropdown {
+  position: fixed !important;
+  z-index: 99999 !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fafbff 50%, #f8f9ff 100%) !important;
+  border: 3px solid transparent !important;
+  border-radius: 24px;
+  box-shadow: 0 25px 80px rgba(102, 126, 234, 0.4), 
+              0 10px 40px rgba(118, 75, 162, 0.3),
+              0 0 0 1px rgba(102, 126, 234, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  padding: 28px;
+  min-width: 360px;
+  max-width: 440px;
+  animation: slideDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-height: 600px;
+  overflow-y: auto;
+  pointer-events: auto !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Ensure dropdown is visible even if parent has overflow hidden */
+.date-picker-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  z-index: 1;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9) rotateX(-10deg);
+  }
+  60% {
+    transform: translateY(5px) scale(1.02) rotateX(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+/* Ethiopian Calendar Styles */
+.eth-calendar-picker {
+  font-family: 'Noto Sans Ethiopic', 'Nyala', 'Abyssinica SIL', 'Ebrima', sans-serif;
+}
+
+.eth-cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.eth-cal-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+.eth-cal-header button {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.eth-cal-header button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2) rotate(15deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.eth-cal-header button:active {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.eth-cal-header span {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.eth-cal-month-selector {
+  margin-bottom: 16px;
+}
+
+.eth-cal-month-selector select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 3px solid transparent;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-family: 'Noto Sans Ethiopic', 'Nyala', 'Abyssinica SIL', 'Ebrima', sans-serif;
+  cursor: pointer;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1f2937;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+}
+
+.eth-cal-month-selector select:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(#fafbff, #fafbff) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+}
+
+.eth-cal-month-selector select:focus {
+  outline: none;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4), 0 0 0 4px rgba(129, 140, 248, 0.2);
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+}
+
+.eth-cal-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 4px;
+}
+
+.eth-cal-day {
+  padding: 16px;
+  border: 3px solid transparent;
+  border-radius: 14px;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%) border-box;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-align: center;
+  font-weight: 700;
+  color: #1f2937;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.eth-cal-day::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.eth-cal-day::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 147, 251, 0.6) 0%, rgba(102, 126, 234, 0.4) 100%);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.eth-cal-day > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eth-cal-day:hover {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+  transform: translateY(-6px) scale(1.12) rotate(3deg);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4), 0 0 40px rgba(240, 147, 251, 0.3);
+  color: #667eea;
+}
+
+.eth-cal-day:hover::after {
+  width: 150%;
+  height: 150%;
+}
+
+.eth-cal-day:hover::before {
+  opacity: 0.2;
+}
+
+.eth-cal-day.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  border-color: transparent;
+  font-weight: 800;
+  transform: scale(1.15) rotate(-3deg);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.6), 0 0 60px rgba(240, 147, 251, 0.4);
+  animation: pulseSelected 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes pulseSelected {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.25) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1.15) rotate(-3deg);
+  }
+}
+
+.eth-cal-day:active {
+  transform: scale(1.05) rotate(0deg);
+  transition: transform 0.1s ease;
+}
+
+/* Add special styling for today's date */
+.eth-cal-day.today {
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  font-weight: 700;
+}
+
+.eth-cal-day.today:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 8px 16px rgba(245, 158, 11, 0.4);
+}
+
+.eth-cal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #e0e7ff;
+}
+
+.eth-cal-footer button {
+  flex: 1;
+  padding: 12px 18px;
+  border: 3px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Noto Sans Ethiopic', 'Nyala', 'Abyssinica SIL', 'Ebrima', sans-serif;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  color: #1f2937;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.eth-cal-footer button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.eth-cal-footer button:hover::before {
+  left: 100%;
+}
+
+.eth-cal-footer button:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.5), 0 0 40px rgba(240, 147, 251, 0.3);
+}
+
+.eth-cal-footer button:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Gregorian Calendar Styles */
+.greg-calendar-picker {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.greg-cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.greg-cal-header button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: bold;
+}
+
+.greg-cal-header button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.greg-cal-header button:active {
+  transform: scale(0.95);
+}
+
+.greg-cal-header span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.greg-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #6366f1;
+}
+
+.greg-cal-weekdays div {
+  padding: 10px 4px;
+  background: linear-gradient(135deg, #f8faff 0%, #e0e7ff 100%);
+  border-radius: 8px;
+}
+
+.greg-cal-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.greg-cal-day {
+  padding: 12px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-weight: 600;
+  color: #4b5563;
+  position: relative;
+  overflow: hidden;
+}
+
+.greg-cal-day::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.greg-cal-day:hover {
+  border-color: #818cf8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.greg-cal-day:hover::before {
+  opacity: 0.1;
+}
+
+.greg-cal-day.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  font-weight: 700;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.greg-cal-day:active {
+  transform: scale(0.95);
+}
+
+.greg-cal-day.empty {
+  border: none;
+  background: transparent;
+  cursor: default;
+  pointer-events: none;
+}
+
+.greg-cal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #e0e7ff;
+}
+
+.greg-cal-footer button {
+  flex: 1;
+  padding: 10px 16px;
+  border: 2px solid #e0e7ff;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.greg-cal-footer button:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.greg-cal-footer button:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .date-picker-dropdown {
+    min-width: 280px;
+  }
+
+  .eth-cal-day,
+  .greg-cal-day {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+}
