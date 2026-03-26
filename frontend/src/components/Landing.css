@@ -359,6 +359,7 @@
         width: 100%;
         padding: 14px 30px;
         font-size: 1rem;
+        box-sizing: border-box;
     }
 
     .landing-content {
@@ -381,6 +382,38 @@
 
     .action-card {
         padding: 30px 20px;
+    }
+
+    .initiatives-section {
+        padding: 50px 15px;
+    }
+
+    .initiatives-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .initiatives-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .initiative-card {
+        padding: 30px 20px;
+    }
+
+    .initiative-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .initiative-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .initiative-card p {
+        font-size: 0.95rem;
     }
 
     .about-section {
