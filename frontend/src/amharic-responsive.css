@@ -365,3 +365,13 @@ html[lang="am"] .info-message {
   line-height: 1.7;
   padding: 12px 16px;
 }
+
+/* Additional mobile responsive fixes for Amharic */
+@media (max-width: 768px) {
+  html[lang="am"] .nav-menu {
+    gap: 5px;
+  }
+
+  html[lang="am"] .nav-item {
+    padding: 0 0.4rem;
+    font-size: 0
